@@ -25,4 +25,4 @@ jobs:
 
     - name: Ejecutar pruebas con tags personalizados
       run: |
-        mvn clean test -Dtest=web.runner.WebTest -Dcucumber.filter.tags="${{ github.event.inputs.tags }}"
+         mvn clean test "-Dtest=web.runner.WebTest" "-Dcucumber.options=--tags ${{ github.event.inputs.tags }}"
